@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="style.css" />
@@ -6,15 +7,24 @@
   </head>
   <h1>Жаркая Мария Сергеевна</h1>
   <img
-    src="https://github.com/MariaZharkaya/practice1/blob/master/practice/IMG_20190907_170346.jpg"
+    src="https://cdn.glitch.com/335bbcc1-bb02-4e7f-9b1b-edcd664f73c6%2Fthumbnails%2FIMG_20190907_170346.jpg?1593511757442"
   />
-<canvas id="canvas" width="1000" height="1000" style = "border: solid"></canvas>
+<canvas id="canvas" width="400" height="450" style = "border: solid"></canvas>
 <body>
 <script>
 
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
-	var x = [-0.63022, -0.64215,  -0.62227, 
+	var x = [-0.28429, 
+			 -0.30417, 
+			 -0.29622, 
+			 -0.26441, 
+			 -0.44732, 
+			 -0.60239, 
+			 -0.60239, 
+			 -0.63419, 
+			 -0.62624,
+           -0.63022, -0.64215,  -0.62227, 
 	         -0.61829,  
 	         -0.59841,  
 	         -0.5825,   
@@ -206,17 +216,18 @@
 			 0.025845, 
 			 0.081511, 
 			 0.12922, 
-			 -0.28429, 
-			 -0.30417, 
-			 -0.29622, 
-			 -0.26441, 
-			 -0.44732, 
-			 -0.60239, 
-			 -0.60239, 
-			 -0.63419, 
-			 -0.62624 
+			 
 			 ];
 	var y = [
+    -0.64427,
+    	-0.81028,
+    	-1.0000,
+    	-1.1304,
+    	-1.1028,
+    	-1.0474,
+    	-0.91304,
+    	-0.74308,
+    	-0.37154,
 	 	-0.44664,
    	-0.28854,
    	-0.16996,
@@ -410,28 +421,20 @@
      	-0.051383,
     	-0.051383,
     	-0.051383,
-   	-0.043478,
-    	-0.64427,
-    	-0.81028,
-    	-1.0000,
-    	-1.1304,
-    	-1.1028,
-    	-1.0474,
-    	-0.91304,
-    	-0.74308,
-    	-0.37154,
+   	-0.043478	
 	];
-
+	let i = 1;
 	ctx.beginPath();
 	ctx.moveTo(x[0]*200+200,-1*y[0]*200+200);
-	for(let i = 1; i<x.length; i++){
+	function picture(){
+    if(i>204) cleanInterval(n);
 		ctx.lineTo(x[i]*200+200,-200*y[i]+200);
 		ctx.stroke();
+    i++;
 	}
+	let t = setInterval(picture, 75);
 	
 </script>
 </body>
 </html>
 
-
-    
